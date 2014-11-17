@@ -1,0 +1,44 @@
+<html lang='en'>
+<head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta property='og:title' content='Punch' />
+
+    <link href='css/metricsgraphics.css' rel='stylesheet' type='text/css'>
+    <link href='css/metricsgraphics-demo.css' rel='stylesheet' type='text/css'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js' charset='utf-8'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script src="js/lib/ace.js" charset="utf-8"></script>
+    <script src='js/metricsgraphics.min.js'></script>
+
+</head>
+
+<body>
+
+    <div class='result text-center col-xs-5'></div>
+
+    <script>
+        data_graphic({
+            title: "Expected Brix Curve",
+            description: "User input expected Brix curve for this batch of wine.",
+            data: [   {'day': 1, value: 35},
+                      {'day': 2, value: 34},
+                      {'day': 3, value: 29},
+                      {'day': 4, value: 22},
+                      {'day': 5, value: 15},
+                      {'day': 6, value: 9},
+                      {'day': 7, value: 4},
+                      {'day': 8, value: 2},
+                      {'day': 9, value: 1},
+                      {'day': 10, value: 1}],
+            width: 400,
+            height: 250,
+            target: ".result",
+            x_accessor: "day",
+            y_accessor: "value",
+            interpolate: "monotone"
+        });
+    </script>
+</body>
+</html>
